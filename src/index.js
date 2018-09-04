@@ -13,8 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
   createList.addEventListener('submit', function(e){
     e.preventDefault()
     let option = document.createElement("option")
+
     option.innerText = newListTitle.value
-    parentList.add(option)
+    // if option.innerText ==
+    let uniq = true
+    for (op of parentList.children) {
+      if (op.innerText === newListTitle.value){
+        uniq = false
+        break
+      }
+    }
+    if (uniq) {
+      parentList.add(option)
+    }
   })
 
 
